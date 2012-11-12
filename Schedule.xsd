@@ -12,8 +12,6 @@
   <xs:element name="distance" type="xs:integer"/>
   <xs:element name="note" type="xs:string"/>
   <xs:element name="isSignStop" type="xs:boolean"/>
-  <xs:element name="startDate" type="xs:date"/>
-  <xs:element name="endDate" type="xs:date"/>
   <xs:element name="weekdays" type="xs:boolean"/>
   <xs:element name="saturday" type="xs:boolean"/>
   <xs:element name="sunday" type="xs:boolean"/>
@@ -35,7 +33,6 @@
       </xs:sequence>
       <xs:element ref="name"/>
       <xs:element ref="Schedule"/>
-      <xs:element ref="DateRange"/>
     </xs:complexType>
   </xs:element>
 
@@ -78,11 +75,4 @@
       <xs:element ref="holidays"/>
     </xs:complexType>
   </xs:element>
-  
-  <xs:element name="DateRange">
-    <xs:complexType>
-      <xs:element ref="startDate"/>
-      <xs:element ref="endDate"/>
-    </xs:complexType>
-  </xs:element>  
 </xs:schema>

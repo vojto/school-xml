@@ -23,14 +23,102 @@
               <xsl:value-of select="name"/>
             </h1>
             
-            <xsl:for-each select="Stops/Stop">
-              <h3>
-                <xsl:value-of select="Location/city"/>,
-                <xsl:value-of select="Location/station"/>
-              </h3>
-            </xsl:for-each>
+            <h2>Stops</h2>
+            
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Stop</th>
+                  <th>Time</th>
+                  <th>Distance</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <xsl:for-each select="Stops/Stop">
+                <tr>
+                  <td>
+                    <xsl:value-of select="Location/city"/>,
+                    <xsl:value-of select="Location/station"/>
+                  </td>
+                  <td>
+                    <span class="label label-success">
+                      <xsl:value-of select="time"/>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="label">
+                      <xsl:value-of select="distance"/> km
+                    </span>
+                  </td>
+                  <td width="400">
+                    <img src="http://maps.googleapis.com/maps/api/staticmap?center={Location/latitude},{Location/longitude}&amp;zoom=10&amp;size=400x120&amp;maptype=roadmap
+&amp;markers=color:blue%7Clabel:%7C{Location/latitude},{Location/longitude}&amp;sensor=false" />
+                  </td>
+                </tr>
+              </xsl:for-each>
+            </table>
+              
+            <h2>Schedule</h2>
+          
+            <table class="table table-bordered table-striped" style="width: 200px;">
+              <tr>
+                <td>Weekdays</td>
+                <td>
+                  <xsl:choose>
+                    <xsl:when test="ScheduleRules/weekdays='1'">
+                      <span class="label label-success">Yes</span>
+                    </xsl:when>
+                    <xsl:when test="ScheduleRules/weekdays='0'">
+                      <span class="label label-warning">No</span>
+                    </xsl:when>
+                  </xsl:choose>
+                </td>
+              </tr>
+              <tr>
+                <td>Saturdays</td>
+                <td>
+                  <xsl:choose>
+                    <xsl:when test="ScheduleRules/saturday='1'">
+                      <span class="label label-success">Yes</span>
+                    </xsl:when>
+                    <xsl:when test="ScheduleRules/saturday='0'">
+                      <span class="label label-warning">No</span>
+                    </xsl:when>
+                  </xsl:choose>
+                </td>
+              </tr>
+              <tr>
+                <td>Sundays</td>
+                <td>
+                  <xsl:choose>
+                    <xsl:when test="ScheduleRules/sunday='1'">
+                      <span class="label label-success">Yes</span>
+                    </xsl:when>
+                    <xsl:when test="ScheduleRules/sunday='0'">
+                      <span class="label label-warning">No</span>
+                    </xsl:when>
+                  </xsl:choose>
+                </td>
+              </tr>
+              <tr>
+                <td>Holidays</td>
+                <td>
+                  <xsl:choose>
+                    <xsl:when test="ScheduleRules/holidays='1'">
+                      <span class="label label-success">Yes</span>
+                    </xsl:when>
+                    <xsl:when test="ScheduleRules/holidays='0'">
+                      <span class="label label-warning">No</span>
+                    </xsl:when>
+                  </xsl:choose>
+                </td>
+              </tr>
+            </table>
+            
+              
           </xsl:for-each>
           
+
         </div>
 
       </body>

@@ -31,7 +31,7 @@
           <longitude>21.477757</longitude>
         </Location>
         <time>12:04:00</time>
-        <distance>0</distance>
+        <distance>24</distance>
         <note>12</note>
         <isSignStop>0</isSignStop>
       </Stop>
@@ -58,10 +58,5 @@
       <sunday>1</sunday>
       <holidays>1</holidays>
     </ScheduleRules>
-
-    <DateRange>
-      <startDate>2012-11-12</startDate>
-      <endDate>2012-11-12</endDate>
-    </DateRange>
   </Connection>
 </Schedule>

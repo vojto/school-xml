@@ -1,15 +1,12 @@
 <!ELEMENT Schedule (Connection)>
-<!ELEMENT Connection (Stops,ScheduleRules,DateRange)>
-<!ELEMENT Stops (Stop)+>
+<!ELEMENT Connection (Stops,ScheduleRules)>
+<!ELEMENT Stops (Stop)>
 <!ELEMENT ScheduleRules (weekdays,saturday,sunday,holidays)>
-<!ELEMENT DateRange (startDate,endDate)>
 <!ELEMENT Stop (Location,time,distance,note,isSignStop)>
 <!ELEMENT weekdays (#PCDATA)>
 <!ELEMENT saturday (#PCDATA)>
 <!ELEMENT sunday (#PCDATA)>
 <!ELEMENT holidays (#PCDATA)>
-<!ELEMENT startDate (#PCDATA)>
-<!ELEMENT endDate (#PCDATA)>
 <!ELEMENT Location (city,region,country,station,latitude,longitude)>
 <!ELEMENT time (#PCDATA)>
 <!ELEMENT distance (#PCDATA)>
