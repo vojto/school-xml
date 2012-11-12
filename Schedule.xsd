@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <!-- Simple elements -->
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="city" type="xs:string"/>
+  <xs:element name="region" type="xs:string"/>
+  <xs:element name="country" type="xs:string"/>
+  <xs:element name="station" type="xs:string"/>
+  <xs:element name="latitude" type="xs:decimal"/>
+  <xs:element name="longitude" type="xs:decimal"/>
+  <xs:element name="time" type="xs:time"/>
+  <xs:element name="distance" type="xs:integer"/>
+  <xs:element name="note" type="xs:string"/>
+  <xs:element name="isSignStop" type="xs:boolean"/>
+  <xs:element name="startDate" type="xs:date"/>
+  <xs:element name="endDate" type="xs:date"/>
+  <xs:element name="weekdays" type="xs:boolean"/>
+  <xs:element name="saturday" type="xs:boolean"/>
+  <xs:element name="sunday" type="xs:boolean"/>
+  <xs:element name="holidays" type="xs:boolean"/>
+  
+  <!-- Complex elements -->
+  <xs:element name="Schedule">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="Connection"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Connection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Stops"/>
+      </xs:sequence>
+      <xs:element ref="name"/>
+      <xs:element ref="Schedule"/>
+      <xs:element ref="DateRange"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Stops">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Stop"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Stop">
+    <xs:complexType>
+      <xs:element ref="Location"/>
+      <xs:element ref="time"/>
+      <xs:element ref="distance"/>
+      <xs:element ref="note"/>
+      <xs:element ref="isSignStop"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="city"/>
+        <xs:element ref="region"/>
+        <xs:element ref="country"/>
+        <xs:element ref="station"/>
+        <xs:element ref="latitude"/>
+        <xs:element ref="longitude"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ScheduleRules">
+    <xs:complexType>
+      <xs:element ref="weekdays"/>
+      <xs:element ref="saturday"/>
+      <xs:element ref="sunday"/>
+      <xs:element ref="holidays"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="DateRange">
+    <xs:complexType>
+      <xs:element ref="startDate"/>
+      <xs:element ref="endDate"/>
+    </xs:complexType>
+  </xs:element>  
+</xs:schema>

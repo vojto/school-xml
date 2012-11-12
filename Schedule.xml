@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="Schedule.xsl"?>
+<!DOCTYPE name SYSTEM "Schedule.dtd">
+
+<Schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schedule.xsd">
+  <Connection>
+    <name>Bus 802409 7</name>
+    <Stops>
+      <Stop>
+        <Location>
+          <city>Kosice</city>
+          <region>Kosicky</region>
+          <country>Slovakia</country>
+          <station>Vlakova stanica</station>
+          <latitude>48.67613</latitude>
+          <longitude>21.283937</longitude>
+        </Location>
+        <time>11:30:00</time>
+        <distance>0</distance>
+        <note>12</note>
+        <isSignStop>0</isSignStop>
+      </Stop>
+      
+      <Stop>
+        <Location>
+          <city>Slanec</city>
+          <region>Kosicky</region>
+          <country>Slovakia</country>
+          <station>Centrum</station>
+          <latitude>48.635518</latitude>
+          <longitude>21.477757</longitude>
+        </Location>
+        <time>12:04:00</time>
+        <distance>0</distance>
+        <note>12</note>
+        <isSignStop>0</isSignStop>
+      </Stop>
+      
+      <Stop>
+        <Location>
+          <city>Celovce</city>
+          <region>Kosicky</region>
+          <country>Slovakia</country>
+          <station>Kostol</station>
+          <latitude>48.601587</latitude>
+          <longitude>21.629248</longitude>
+        </Location>
+        <time>12:23:00</time>
+        <distance>42</distance>
+        <note>12</note>
+        <isSignStop>0</isSignStop>
+      </Stop> 
+    </Stops>
+
+    <ScheduleRules>
+      <weekdays>1</weekdays>
+      <saturday>1</saturday>
+      <sunday>1</sunday>
+      <holidays>1</holidays>
+    </ScheduleRules>
+
+    <DateRange>
+      <startDate>2012-11-12</startDate>
+      <endDate>2012-11-12</endDate>
+    </DateRange>
+  </Connection>
+</Schedule>
